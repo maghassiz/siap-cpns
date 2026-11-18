@@ -1,0 +1,107 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-inter);
+  --font-heading: var(--font-inter);
+
+  /* Cap all heavy weights at medium (500) — no bold anywhere */
+  --font-weight-medium: 500;
+  --font-weight-semibold: 500;
+  --font-weight-bold: 500;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Brand extras */
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-gold-ink: var(--gold-ink);
+  --color-good: var(--good);
+  --color-bad: var(--bad);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* ===== KORPRI theme — light only ===== */
+:root {
+  color-scheme: light;
+  --radius: 0.75rem;
+
+  --background: #eef1f6;
+  --foreground: #1c2230;
+  --card: #ffffff;
+  --card-foreground: #1c2230;
+  --popover: #ffffff;
+  --popover-foreground: #1c2230;
+
+  --primary: #16306b;        /* KORPRI navy */
+  --primary-foreground: #eaf0fb;
+  --secondary: #f3f5fa;
+  --secondary-foreground: #16306b;
+  --muted: #f3f5fa;
+  --muted-foreground: #6c7486;
+  --accent: #e6eefb;
+  --accent-foreground: #164a9e;
+  --destructive: #d84b3a;
+
+  --border: #e2e6ef;
+  --input: #e2e6ef;
+  --ring: #1d5fc4;
+
+  --gold: #e8a812;
+  --gold-soft: #fbeecb;
+  --gold-ink: #946a05;
+  --good: #1f9d57;
+  --bad: #d84b3a;
+
+  --chart-1: #1d5fc4;
+  --chart-2: #e8a812;
+  --chart-3: #1f9d57;
+  --chart-4: #6f7bf0;
+  --chart-5: #39b6c7;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    color-scheme: light;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  /* belt-and-suspenders: no raw bold text */
+  b, strong, h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+}
